@@ -1,0 +1,42 @@
+.movie-spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .movie-container {
+    overflow: hidden;
+    width: 390px;
+    color:white;
+    margin-top : 30px;
+    margin-left: 40px;
+  }
+  
+  .movie-poster {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+  
+    // border-radius: 10px;
+  }
+  
+  .movie-rating {
+    font-size: 18px;
+  }
+  
+  .movie-rating,
+  .movie-title {
+    margin: 6px 0px;
+  }
+  
+  .action-buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .type
+  {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }

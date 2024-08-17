@@ -1,0 +1,7 @@
+<section class="movie-list-container">
+  @if(isLoading){
+  <h1>Loading...</h1>
+  } @for (exe of excerciseList; track exe.id){
+  <app-excercise [excercise]="exe" />
+  }
+</section>

@@ -1,0 +1,68 @@
+  
+.homepage {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f8f8, #fff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header h1 {
+    font-size: 56px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 30px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .intro p {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+  
+  .funny-line {
+    font-size: 18px;
+    color: #00796b;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .call-to-action h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .call-to-action p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 25px;
+  }
+  
+  .call-to-action button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: (rgb(22, 22, 22) 34%,);
+    background: radial-gradient(rgb(22, 22, 22) 34%,);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .call-to-action button:hover {
+    background: (rgb(0, 0, 0) 14%,);
+    background: radial-gradient(rgb(17, 9, 9) 14%,);
+  }
+  

@@ -1,0 +1,41 @@
+<div class="parent">
+  <mat-card class="movie-container">
+    <img
+      src="{{ excercise.image }}"
+      alt="{{ excercise.name }}"
+      class="movie-poster"
+    />
+    <mat-card-content>
+      <div class="body">
+        <div class="movie-spec">
+          <h4 class="movie-title">
+            {{ excercise.name }}
+          </h4>
+          <p class="movie-rating">⭐ {{ excercise.rating }}</p>
+        </div>
+        <div class="type">
+          <p><i class="fa-solid fa-list"></i> {{ excercise.type }}</p>
+          <p>
+            <i class="fa-regular fa-clock" style="font-size: 20px"></i>
+            {{ excercise.preferredTime }}
+          </p>
+        </div>
+        <p>
+          <i class="fa-solid fa-person-walking"></i>
+          {{ excercise.bodyPartAffected }}
+        </p>
+
+        <p><i class="fa-solid fa-star"></i> {{ excercise.moreInfo }}</p>
+
+        <p>{{ excercise.description }}</p>
+        <p>
+          <i
+            class="fa-solid fa-triangle-exclamation"
+            style="font-size: 20px; color: red"
+          ></i>
+          {{ excercise.cautionAge }}
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

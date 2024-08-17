@@ -1,0 +1,20 @@
+<div class="counter-container">
+  <button
+    mat-icon-button
+    aria-label="Thumbs to like the movie"
+    [matBadge]="like"
+    color="primary"
+    (click)="incrementLike()"
+  >
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    aria-label="Click to dislike the movie"
+    [matBadge]="disLike"
+    color="warn"
+    (click)="incrementDisLike()"
+  >
+    <mat-icon>thumb_down</mat-icon>
+  </button>
+</div>
