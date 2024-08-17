@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { CounterComponent } from '../counter/counter.component';
+import { IExcercise } from '../app.component';
 
 @Component({
   selector: 'app-excercise',
@@ -36,6 +37,13 @@ export class ExcerciseComponent {
       'Recommended for ages 15 and up; ensure proper technique to avoid shoulder strain.',
   };
 
-  deleteMovie() {}
-  editMovie() {}
+  @Output() deleteMovieEvent = new EventEmitter<IExcercise>();
+  @Output() editMovieEvent = new EventEmitter<IExcercise>();
+
+  deleteMovie() {
+    this.deleteMovieEvent.emit(this.excercise);
+  }
+  editMovie() {
+    this.editMovieEvent.emit(this.excercise);
+  }
 }

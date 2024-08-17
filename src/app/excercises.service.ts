@@ -8,7 +8,7 @@ import { Newout } from '../../excercise';
 export class ExcercisesService {
   constructor() {}
 
-  API = 'https://66b0a8ac6a693a95b539a7ec.mockapi.io/Workouts';
+  API = 'https://66b0a8ac6a693a95b539a7ec.mockapi.io';
 
   addMovie(newworkout: Newout) {
     // this.movieList.push(newMovie);
@@ -18,7 +18,7 @@ export class ExcercisesService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`${this.API}`, {
+    return fetch(`${this.API}/Workouts`, {
       method: 'POST',
       body: JSON.stringify(newworkout),
       headers: {
@@ -35,7 +35,7 @@ export class ExcercisesService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`${this.API}/movies/${updatedMovie.id}`, {
+    return fetch(`${this.API}/Workouts/${updatedMovie.id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedMovie),
       headers: {
@@ -45,13 +45,13 @@ export class ExcercisesService {
   }
 
   deleteMovie(movie: IExcercise) {
-    return fetch(`${this.API}/movies/${movie.id}`, {
+    return fetch(`${this.API}/Workouts/${movie.id}`, {
       method: 'Delete',
     }).then((res) => res.json());
   }
 
   getMovieByIdP(id: string): Promise<IExcercise> {
-    return fetch(`${this.API}/${id}`, {
+    return fetch(`${this.API}//Workouts/${id}`, {
       method: 'GET',
       headers: {
         'x-auth-token': localStorage.getItem('token') as string,
@@ -67,6 +67,6 @@ export class ExcercisesService {
   }
 
   getAllMoviesP(): Promise<IExcercise[]> {
-    return fetch(`${this.API}`).then((res) => res.json());
+    return fetch(`${this.API}/Workouts`).then((res) => res.json());
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
+import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
 
 export interface IExcercise {
   id: string;
@@ -18,7 +19,13 @@ export interface IExcercise {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, CounterComponent, ExcercisesComponent],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    CounterComponent,
+    ExcercisesComponent,
+    AddexcerciseComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

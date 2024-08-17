@@ -3,6 +3,9 @@ import { HomeComponent } from './home/home.component';
 import { ExcerciseComponent } from './excercise/excercise.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { ExcerciseDetailsComponent } from './excercise-details/excercise-details.component';
+import { combineLatest } from 'rxjs';
+import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
+import { EditexcerciseComponent } from './editexcercise/editexcercise.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +16,8 @@ export const routes: Routes = [
     path: 'excercises',
     children: [
       { path: '', component: ExcercisesComponent },
+      { path: 'add', component: AddexcerciseComponent },
+      { path: 'edit/:id', component: EditexcerciseComponent },
       { path: ':id', component: ExcerciseDetailsComponent },
     ],
   },

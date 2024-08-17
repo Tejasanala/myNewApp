@@ -37,4 +37,12 @@ export class ExcercisesComponent {
         this.msg = 'Something went wrong 🥲';
       });
   }
+
+  deleteMovieP(exe: IExcercise) {
+    this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
+  }
+
+  editMovieP(exe: IExcercise) {
+    this.router.navigate(['excercises', 'edit', exe.id]);
+  }
 }

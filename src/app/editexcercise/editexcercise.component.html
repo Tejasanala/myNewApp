@@ -1,0 +1,95 @@
+<!-- Todo -->
+<form
+  [formGroup]="excerciseForm"
+  (ngSubmit)="editexcercise()"
+  class="add-movie-form"
+>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      placeholder="Enter the name of the workout"
+      formControlName="name"
+    />
+
+    @if(name?.touched && name?.hasError('required') ){
+    <mat-error>Name is <strong>required</strong></mat-error>
+    } @if(name?.touched && name?.hasError('minlength') ){
+    <mat-error>Please provide full movie name 😁</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <input matInput placeholder="http://" formControlName="image" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cautiok Age</mat-label>
+    <input
+      matInput
+      placeholder="add description"
+      formControlName="cautionAge"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>More Info</mat-label>
+    <input matInput placeholder="add description" formControlName="moreInfo" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Type</mat-label>
+    <input matInput placeholder="Core/Strengthen" formControlName="type" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>preferredTime</mat-label>
+    <input
+      matInput
+      placeholder="Morning/Evening/Anytime"
+      formControlName="preferredTime"
+    />
+    @if(time?.touched && time?.hasError('required') ){
+    <mat-error>preferredTime is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder="Enter a Number"
+      formControlName="rating"
+    />
+
+    @if(rating?.touched && rating?.hasError('required') ){
+    <mat-error>Rating is <strong>required</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('min') ){
+    <mat-error>Rating is <strong>too low 🥲</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('max') ){
+    <mat-error>Rating is too high 😓</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>bodyPartAffected</mat-label>
+    <input
+      matInput
+      placeholder="Name of the body part"
+      formControlName="bodyPartAffected"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>description</mat-label>
+    <input
+      matInput
+      placeholder="enter the advantages"
+      formControlName="description"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">SAVE</button>
+</form>

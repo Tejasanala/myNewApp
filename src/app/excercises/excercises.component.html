@@ -2,6 +2,10 @@
   @if(isLoading){
   <h1>Loading...</h1>
   } @for (exe of excerciseList; track exe.id){
-  <app-excercise [excercise]="exe" />
+  <app-excercise
+    [excercise]="exe"
+    (deleteMovieEvent)="deleteMovieP($event)"
+    (editMovieEvent)="editMovieP($event)"
+  />
   }
 </section>
