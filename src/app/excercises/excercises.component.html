@@ -1,7 +1,7 @@
 <section class="movie-list-container">
   @if(isLoading){
   <h1>Loading...</h1>
-  } @for (exe of excerciseList; track exe.id){
+  } @for (exe of excerciseList; track exe.ValueId){
   <app-excercise
     [excercise]="exe"
     (deleteMovieEvent)="deleteMovieP($event)"

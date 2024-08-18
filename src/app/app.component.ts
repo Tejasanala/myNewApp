@@ -5,7 +5,7 @@ import { ExcercisesComponent } from './excercises/excercises.component';
 import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
 
 export interface IExcercise {
-  id: string;
+  ValueId: string;
   name: string;
   type: string;
   preferredTime: string;

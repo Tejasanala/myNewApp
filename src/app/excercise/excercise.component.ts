@@ -23,7 +23,7 @@ import { IExcercise } from '../app.component';
 })
 export class ExcerciseComponent {
   @Input() excercise = {
-    id: '14',
+    ValueId: '14',
     name: 'Tricep Dip',
     type: 'Strength',
     preferredTime: 'Morning/Evening',

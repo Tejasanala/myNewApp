@@ -43,6 +43,6 @@ export class ExcercisesComponent {
   }
 
   editMovieP(exe: IExcercise) {
-    this.router.navigate(['excercises', 'edit', exe.id]);
+    this.router.navigate(['excercises', 'edit', exe.ValueId]);
   }
 }
