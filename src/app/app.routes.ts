@@ -6,11 +6,16 @@ import { ExcerciseDetailsComponent } from './excercise-details/excercise-details
 import { combineLatest } from 'rxjs';
 import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
 import { EditexcerciseComponent } from './editexcercise/editexcercise.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'excercises',

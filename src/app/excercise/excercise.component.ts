@@ -23,7 +23,7 @@ import { IExcercise } from '../app.component';
 })
 export class ExcerciseComponent {
   @Input() excercise = {
-    ValueId: '14',
+    ValueId: ' ',
     name: 'Tricep Dip',
     type: 'Strength',
     preferredTime: 'Morning/Evening',
@@ -36,6 +36,8 @@ export class ExcerciseComponent {
     cautionAge:
       'Recommended for ages 15 and up; ensure proper technique to avoid shoulder strain.',
   };
+
+  @Input() id!: string;
 
   @Output() deleteMovieEvent = new EventEmitter<IExcercise>();
   @Output() editMovieEvent = new EventEmitter<IExcercise>();

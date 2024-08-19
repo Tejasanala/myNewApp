@@ -3,11 +3,21 @@ import { IExcercise } from '../app.component';
 import { ExcerciseComponent } from '../excercise/excercise.component';
 import { ExcercisesService } from '../excercises.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-excercises',
   standalone: true,
-  imports: [ExcerciseComponent],
+  imports: [
+    ExcerciseComponent,
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    CommonModule,
+  ],
   templateUrl: './excercises.component.html',
   styleUrl: './excercises.component.scss',
 })
@@ -15,6 +25,7 @@ export class ExcercisesComponent {
   excerciseList: Array<IExcercise> = [];
   isLoading: boolean = true;
   msg = '';
+  searchTerm: string = '';
 
   constructor(
     public excercisesService: ExcercisesService,
@@ -44,5 +55,20 @@ export class ExcercisesComponent {
 
   editMovieP(exe: IExcercise) {
     this.router.navigate(['excercises', 'edit', exe.ValueId]);
+  }
+
+  onSearch() {
+    // this.excerciseList = this..filter(
+    //   (recipe: any) =>
+    //     recipe.title
+    //       .toLowerCase()
+    //       .includes(this.searchTerm.toLocaleLowerCase()) ||
+    //     recipe.type
+    //       .toLowerCase()
+    //       .includes(this.searchTerm.toLocaleLowerCase()) ||
+    //     recipe.category
+    //       .toLowerCase()
+    //       .includes(this.searchTerm.toLocaleLowerCase())
+    // );
   }
 }

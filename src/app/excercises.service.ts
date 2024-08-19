@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IExcercise } from './app.component';
 import { Newout } from '../../excercise';
+import { API } from '../../global';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExcercisesService {
   constructor() {}
-
-  API = 'https://excercise-dx1p.onrender.com';
 
   addMovie(newworkout: Newout) {
     // this.movieList.push(newMovie);
@@ -18,7 +17,7 @@ export class ExcercisesService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`${this.API}/Excercise`, {
+    return fetch(`${API}/Excercise`, {
       method: 'POST',
       body: JSON.stringify(newworkout),
       headers: {
@@ -35,7 +34,7 @@ export class ExcercisesService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`${this.API}/Excercise/${updatedMovie.ValueId}`, {
+    return fetch(`${API}/Excercise/${updatedMovie.ValueId}`, {
       method: 'PUT',
       body: JSON.stringify(updatedMovie),
       headers: {
@@ -45,13 +44,13 @@ export class ExcercisesService {
   }
 
   deleteMovie(movie: IExcercise) {
-    return fetch(`${this.API}/Excercise/${movie.ValueId}`, {
+    return fetch(`${API}/Excercise/${movie.ValueId}`, {
       method: 'Delete',
     }).then((res) => res.json());
   }
 
   getMovieByIdP(id: string): Promise<IExcercise> {
-    return fetch(`${this.API}/Excercise/${id}`, {
+    return fetch(`${API}/Excercise/${id}`, {
       method: 'GET',
       headers: {
         'x-auth-token': localStorage.getItem('token') as string,
@@ -67,6 +66,6 @@ export class ExcercisesService {
   }
 
   getAllMoviesP(): Promise<IExcercise[]> {
-    return fetch(`${this.API}/Excercise`).then((res) => res.json());
+    return fetch(`${API}/Excercise`).then((res) => res.json());
   }
 }
