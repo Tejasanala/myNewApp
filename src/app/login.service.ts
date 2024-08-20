@@ -17,7 +17,7 @@ export class LoginService {
   constructor() {}
 
   login(credentials: User): Promise<TokenResponse> {
-    return fetch(`${API}/users/login`, {
+    return fetch(`${API}/customers/login`, {
       method: 'POST',
       body: JSON.stringify(credentials),
       headers: {

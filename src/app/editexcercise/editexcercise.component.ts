@@ -37,6 +37,7 @@ export class EditexcerciseComponent {
   ) {
     // formGroup -> formControlName
     this.excerciseForm = this.fb.group({
+      id: '',
       name: ['', [Validators.required, Validators.minLength(2)]],
       type: ['', [Validators.required, Validators.minLength(2)]],
       preferredTime: ['', [Validators.required, Validators.minLength(5)]],
@@ -69,18 +70,17 @@ export class EditexcerciseComponent {
   get time() {
     return this.excerciseForm.get('time');
   }
+
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id') as string; // From URL
-
+    console.log(id);
     this.excercisesService.getMovieByIdP(id).then((data) => {
-      console.log(data);
-      // this.movieForm.setValue vs this.movieForm.patchValue
+      console.log(data); // Ensure data is what you expect
       this.excerciseForm.patchValue(data);
     });
   }
 
   editexcercise() {
-    console.log(this.excerciseForm.value);
     // Todo: Fix Add - Technical Debt
 
     if (this.excerciseForm.valid) {

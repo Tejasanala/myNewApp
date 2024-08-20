@@ -33,6 +33,7 @@ export class ExcercisesService {
     // 1. method
     // 2. body - Data & JSON
     // 3. Header - JSON
+    console.log('Editing exercise with ID:', updatedMovie.ValueId);
 
     return fetch(`${API}/Excercise/${updatedMovie.ValueId}`, {
       method: 'PUT',
@@ -40,7 +41,12 @@ export class ExcercisesService {
       headers: {
         'Content-type': 'application/json',
       },
-    }).then((res) => res.json());
+    })
+      .then((res) => {
+        res.json();
+        console.log(res);
+      })
+      .catch((err) => console.log(err.message));
   }
 
   deleteMovie(movie: IExcercise) {
