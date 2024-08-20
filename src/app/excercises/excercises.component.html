@@ -1,17 +1,24 @@
 <form [formGroup]="searchForm">
-  <input placeholder="search..." formControlName="search" />
+  <div class="mainclass">
+    <div class="recipe-search-container">
+      <h2><i>Search</i></h2>
+      <mat-form-field>
+        <input matInput placeholder="search..." formControlName="search" />
+      </mat-form-field>
+    </div>
+  </div>
 </form>
 
 <section class="movie-list-container">
   @if(isLoading){
-  <h1>Loading...</h1>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
   } @for (exe of filteredexcercises; track exe.ValueId){
   <app-excercise
     [excercise]="exe"
+    (deleteMovieEvent)="deleteMovieP($event)"
     (editMovieEvent)="editMovieP($event)"
     [id]="exe.ValueId"
   />
   }
 </section>
-
-<!-- (deleteMovieEvent)="deleteMovieP($event)" -->

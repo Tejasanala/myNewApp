@@ -8,6 +8,8 @@ export interface User {
 export interface TokenResponse {
   msg: string;
   token: string;
+  roleId: string;
+  username: string;
 }
 
 @Injectable({
@@ -15,7 +17,7 @@ export interface TokenResponse {
 })
 export class LoginService {
   constructor() {}
-  createUser(credentials: User) {
+  createUser(credentials: User): Promise<TokenResponse> {
     return fetch(`${API}/customers/signup`, {
       method: 'POST',
       body: JSON.stringify(credentials),

@@ -30,7 +30,7 @@ import { LoginService } from '../login.service';
 })
 export class SignupComponent {
   signupForm!: FormGroup;
-  users: { userName: string; password: string; confirmpassword: string }[] = []; // Array to store users
+  users: { userName: string; password: string }[] = []; // Array to store users
   constructor(
     private fb: FormBuilder,
     private route: Router,
@@ -39,18 +39,7 @@ export class SignupComponent {
     this.signupForm = this.fb.group({
       userName: ['', Validators.required],
       password: ['', Validators.required],
-      confirmpassword: ['', Validators.required],
     });
-  }
-  onSubmit() {
-    if (this.signupForm.valid) {
-      const { userName, password, confirmpassword } = this.signupForm.value;
-      // this.users.push({ userName, password }); // Store the user credentials
-      console.log('Stored Users:', this.users);
-      this.loginService.createUser(this.signupForm.value);
-      // Handle login logic here (e.g., authentication)
-      this.route.navigate(['/excercises']);
-    }
   }
   get userName() {
     return this.signupForm.get('userName');
@@ -59,7 +48,8 @@ export class SignupComponent {
     return this.signupForm.get('password');
   }
 
-  get confirmpassword() {
-    return this.signupForm.get('confirmpassword');
+  signup() {
+    console.log(this.signupForm.value);
+    this.loginService.createUser(this.signupForm.value);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
@@ -47,5 +47,9 @@ export class ExcerciseComponent {
   }
   editMovie() {
     this.editMovieEvent.emit(this.excercise);
+  }
+  constructor(private route: Router) {}
+  addtocart(excercise: any) {
+    this.route.navigate([`/cart`]);
   }
 }

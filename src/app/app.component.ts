@@ -3,6 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
+import { CartComponent } from './cart/cart.component';
 
 export interface IExcercise {
   ValueId: string;
@@ -25,6 +26,7 @@ export interface IExcercise {
     CounterComponent,
     ExcercisesComponent,
     AddexcerciseComponent,
+    CartComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

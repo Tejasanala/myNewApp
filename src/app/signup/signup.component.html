@@ -2,7 +2,7 @@
   <div class="title">
     <mat-card-title>Signup</mat-card-title>
   </div>
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
     <mat-form-field>
       <mat-label>Username</mat-label>
       <input matInput type="text" formControlName="userName" />
@@ -16,14 +16,6 @@
       <input matInput type="password" formControlName="password" />
       @if(password?.touched && password?.hasError('required') ){
       <mat-error>password is <strong>required</strong></mat-error>
-      }
-    </mat-form-field>
-    <br />
-    <mat-form-field>
-      <mat-label>Confirm Password</mat-label>
-      <input matInput type="password" formControlName="confirmpassword" />
-      @if(confirmpassword?.touched && confirmpassword?.hasError('required') ){
-      <mat-error>Entered password is<strong>Wrong</strong></mat-error>
       }
     </mat-form-field>
 

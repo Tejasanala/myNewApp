@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IExcercise } from '../app.component';
 import { ExcerciseComponent } from '../excercise/excercise.component';
 import { ExcercisesService } from '../excercises.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { debounceTime, switchMap, catchError, of, startWith } from 'rxjs';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-excercises',
@@ -24,6 +25,8 @@ import { debounceTime, switchMap, catchError, of, startWith } from 'rxjs';
     MatCardModule,
     CommonModule,
     ReactiveFormsModule,
+    MatProgressBarModule,
+    RouterLink,
   ],
   templateUrl: './excercises.component.html',
   styleUrl: './excercises.component.scss',
@@ -63,26 +66,24 @@ export class ExcercisesComponent {
       });
   }
 
-  // loadMovies() {
-  //   this.excercisesService
-  //     .getAllMoviesP()
-  //     .then((data) => {
-  //       this.excerciseList = data;
-  //       this.isLoading = false;
-  //     })
-  //     .catch(() => {
-  //       this.isLoading = false;
-  //       this.msg = 'Something went wrong 🥲';
-  //     });
-  // }
+  loadMovies() {
+    this.excercisesService
+      .getAllMoviesP()
+      .then((data) => {
+        this.excerciseList = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+      });
+  }
 
-  // deleteMovieP(exe: IExcercise) {
-  //   this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
-  // }
+  deleteMovieP(exe: IExcercise) {
+    this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
+  }
 
   editMovieP(exe: IExcercise) {
     this.router.navigate(['excercises', 'edit', exe.ValueId]);
   }
-
-  onSearch() {}
 }
