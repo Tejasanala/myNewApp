@@ -1,25 +1,17 @@
-<div class="mainclass">
-  <div class="recipe-search-container">
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Search"
-        [(ngModel)]="searchTerm"
-        (input)="onSearch()"
-      />
-    </mat-form-field>
-  </div>
+<form [formGroup]="searchForm">
+  <input placeholder="search..." formControlName="search" />
+</form>
 
-  <section class="movie-list-container">
-    @if(isLoading){
-    <h1>Loading...</h1>
-    } @for (exe of excerciseList; track exe.ValueId){
-    <app-excercise
-      [excercise]="exe"
-      (deleteMovieEvent)="deleteMovieP($event)"
-      (editMovieEvent)="editMovieP($event)"
-      [id]="exe.ValueId"
-    />
-    }
-  </section>
-</div>
+<section class="movie-list-container">
+  @if(isLoading){
+  <h1>Loading...</h1>
+  } @for (exe of filteredexcercises; track exe.ValueId){
+  <app-excercise
+    [excercise]="exe"
+    (editMovieEvent)="editMovieP($event)"
+    [id]="exe.ValueId"
+  />
+  }
+</section>
+
+<!-- (deleteMovieEvent)="deleteMovieP($event)" -->

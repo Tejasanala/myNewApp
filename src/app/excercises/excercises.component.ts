@@ -3,10 +3,16 @@ import { IExcercise } from '../app.component';
 import { ExcerciseComponent } from '../excercise/excercise.component';
 import { ExcercisesService } from '../excercises.service';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { debounceTime, switchMap, catchError, of, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-excercises',
@@ -17,58 +23,66 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatCardModule,
     CommonModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './excercises.component.html',
   styleUrl: './excercises.component.scss',
 })
 export class ExcercisesComponent {
-  excerciseList: Array<IExcercise> = [];
+  excerciseList: any;
   isLoading: boolean = true;
   msg = '';
+  searchForm!: FormGroup;
+
   searchTerm: string = '';
+  filteredexcercises: any;
 
   constructor(
     public excercisesService: ExcercisesService,
-    private router: Router
-  ) {}
-
-  ngOnInit() {
-    this.loadMovies();
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.searchForm = this.fb.group({ search: '' });
   }
 
-  loadMovies() {
-    this.excercisesService
-      .getAllMoviesP()
-      .then((data) => {
+  ngOnInit() {
+    //this.loadMovies();
+
+    this.searchForm
+      .get('search')
+      ?.valueChanges.pipe(
+        startWith(''),
+        debounceTime(300),
+        switchMap((searchTerm) => this.excercisesService.searchUser(searchTerm))
+      )
+      .subscribe((data) => {
+        console.log(data);
         this.excerciseList = data;
+        this.filteredexcercises = this.excerciseList;
         this.isLoading = false;
-      })
-      .catch(() => {
-        this.isLoading = false;
-        this.msg = 'Something went wrong 🥲';
       });
   }
 
-  deleteMovieP(exe: IExcercise) {
-    this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
-  }
+  // loadMovies() {
+  //   this.excercisesService
+  //     .getAllMoviesP()
+  //     .then((data) => {
+  //       this.excerciseList = data;
+  //       this.isLoading = false;
+  //     })
+  //     .catch(() => {
+  //       this.isLoading = false;
+  //       this.msg = 'Something went wrong 🥲';
+  //     });
+  // }
+
+  // deleteMovieP(exe: IExcercise) {
+  //   this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
+  // }
 
   editMovieP(exe: IExcercise) {
     this.router.navigate(['excercises', 'edit', exe.ValueId]);
   }
 
-  onSearch() {
-    // this.excerciseList = this..filter(
-    //   (recipe: any) =>
-    //     recipe.title
-    //       .toLowerCase()
-    //       .includes(this.searchTerm.toLocaleLowerCase()) ||
-    //     recipe.type
-    //       .toLowerCase()
-    //       .includes(this.searchTerm.toLocaleLowerCase()) ||
-    //     recipe.category
-    //       .toLowerCase()
-    //       .includes(this.searchTerm.toLocaleLowerCase())
-    // );
-  }
+  onSearch() {}
 }

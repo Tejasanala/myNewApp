@@ -2,12 +2,17 @@ import { Injectable } from '@angular/core';
 import { IExcercise } from './app.component';
 import { Newout } from '../../excercise';
 import { API } from '../../global';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExcercisesService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  searchUser(searchTerm: string) {
+    return this.http.get(`${API}/Excercise?search=${searchTerm}`);
+  }
 
   addMovie(newworkout: Newout) {
     // this.movieList.push(newMovie);

@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { ExcercisesService } from '../excercises.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Newout } from '../../../excercise';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -37,7 +36,7 @@ export class EditexcerciseComponent {
   ) {
     // formGroup -> formControlName
     this.excerciseForm = this.fb.group({
-      id: '',
+      ValueId: this.route.snapshot.paramMap.get('id') as string,
       name: ['', [Validators.required, Validators.minLength(2)]],
       type: ['', [Validators.required, Validators.minLength(2)]],
       preferredTime: ['', [Validators.required, Validators.minLength(5)]],
