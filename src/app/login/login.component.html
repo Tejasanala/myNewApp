@@ -20,6 +20,11 @@
       placeholder="123467abc"
       formControlName="password"
     />
+    @if(password?.touched && password?.hasError('required') ){
+    <mat-error>Password is <strong>required</strong></mat-error>
+    } @if(password?.touched && password?.hasError('minlength') ){
+    <mat-error>Pasword is not valid</mat-error>
+    }
   </mat-form-field>
 
   <button mat-raised-button type="submit">Login</button>

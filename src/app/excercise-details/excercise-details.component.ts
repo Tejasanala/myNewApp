@@ -39,4 +39,17 @@ export class ExcerciseDetailsComponent {
         this.msg = 'Something went wrong 🥲';
       });
   }
+
+  loadMovies() {
+    this.excercisesService
+      .getAllMoviesP()
+      .then((data) => {
+        this.excerciseList = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+      });
+  }
 }

@@ -33,12 +33,15 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
-      password: '',
+      password: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   get username() {
     return this.loginForm.get('username');
+  }
+  get password() {
+    return this.loginForm.get('password');
   }
 
   login() {
@@ -46,7 +49,7 @@ export class LoginComponent {
     this.loginService.login(this.loginForm.value).then((data) => {
       localStorage.setItem('token', data.token);
 
-      this.route.navigate([`/excercises`]);
+      this.route.navigate([`/home`]);
     });
   }
 }
