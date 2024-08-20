@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {
   FormBuilder,
+  FormsModule,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -10,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginService } from '../login.service';
 import { Route, Router, RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,8 @@ import { Route, Router, RouterLink } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     RouterLink,
+    FormsModule,
+    MatCardModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

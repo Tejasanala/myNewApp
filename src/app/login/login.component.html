@@ -1,33 +1,37 @@
-<!-- Todo -->
-<form [formGroup]="loginForm" (ngSubmit)="login()" class="add-movie-form">
-  <!-- <form class="add-movie-form"> -->
-  <mat-form-field>
-    <mat-label>Username</mat-label>
-    <input matInput placeholder="Tejaswini" formControlName="username" />
+<div class="easy">
+  <div class="title">
+    <mat-card-title>Login</mat-card-title>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="add-movie-form">
+    <!-- <form class="add-movie-form"> -->
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Tejaswini" formControlName="username" />
 
-    @if(username?.touched && username?.hasError('required') ){
-    <mat-error>Username is <strong>required</strong></mat-error>
-    } @if(username?.touched && username?.hasError('minlength') ){
-    <mat-error>Please provide full username 😁</mat-error>
-    }
-  </mat-form-field>
+      @if(username?.touched && username?.hasError('required') ){
+      <mat-error>Username is <strong>required</strong></mat-error>
+      } @if(username?.touched && username?.hasError('minlength') ){
+      <mat-error>Please provide full username 😁</mat-error>
+      }
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input
-      type="text"
-      matInput
-      placeholder="123467abc"
-      formControlName="password"
-    />
-    @if(password?.touched && password?.hasError('required') ){
-    <mat-error>Password is <strong>required</strong></mat-error>
-    } @if(password?.touched && password?.hasError('minlength') ){
-    <mat-error>Pasword is not valid</mat-error>
-    }
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="123467abc"
+        formControlName="password"
+      />
+      @if(password?.touched && password?.hasError('required') ){
+      <mat-error>Password is <strong>required</strong></mat-error>
+      } @if(password?.touched && password?.hasError('minlength') ){
+      <mat-error>Pasword is not valid</mat-error>
+      }
+    </mat-form-field>
 
-  <button mat-raised-button type="submit">Login</button>
+    <button mat-raised-button type="submit">Login</button>
 
-  <!-- <a routerLink="/signup">Donot have an account?SignUp</a> -->
-</form>
+    <!-- <a routerLink="/signup">Donot have an account?SignUp</a> -->
+  </form>
+</div>

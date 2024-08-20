@@ -1,4 +1,4 @@
-.add-movie-form {
+.easy{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -6,4 +6,10 @@
     max-width: 400px;
     margin: 16px auto;
   }
-  
+  .title
+{
+    font-size:40px;
+    font-weight: 50px;
+    margin-bottom: 30px;
+    
+}

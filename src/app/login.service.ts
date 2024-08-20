@@ -15,6 +15,15 @@ export interface TokenResponse {
 })
 export class LoginService {
   constructor() {}
+  createUser(credentials: User) {
+    return fetch(`${API}/customers/signup`, {
+      method: 'POST',
+      body: JSON.stringify(credentials),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
 
   login(credentials: User): Promise<TokenResponse> {
     return fetch(`${API}/customers/login`, {
