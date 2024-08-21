@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IExcercise } from '../app.component';
 import { ExcerciseComponent } from '../excercise/excercise.component';
 import { ExcercisesService } from '../excercises.service';
@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { debounceTime, switchMap, catchError, of, startWith } from 'rxjs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-excercises',
@@ -42,6 +43,7 @@ export class ExcercisesComponent {
 
   constructor(
     public excercisesService: ExcercisesService,
+    public cartservice: CartService,
     private router: Router,
     private fb: FormBuilder
   ) {
@@ -85,5 +87,10 @@ export class ExcercisesComponent {
 
   editMovieP(exe: IExcercise) {
     this.router.navigate(['excercises', 'edit', exe.ValueId]);
+  }
+  cart(product: any) {
+    console.log(product);
+    this.cartservice.addingCart(product);
+    //    this.route.navigate([`cart/${product.id}`]);
   }
 }

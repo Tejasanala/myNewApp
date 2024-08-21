@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { CounterComponent } from '../counter/counter.component';
 import { IExcercise } from '../app.component';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-excercise',
@@ -41,6 +42,7 @@ export class ExcerciseComponent {
 
   @Output() deleteMovieEvent = new EventEmitter<IExcercise>();
   @Output() editMovieEvent = new EventEmitter<IExcercise>();
+  @Output() cartEvent = new EventEmitter<any>();
 
   deleteMovie() {
     this.deleteMovieEvent.emit(this.excercise);
@@ -48,8 +50,8 @@ export class ExcerciseComponent {
   editMovie() {
     this.editMovieEvent.emit(this.excercise);
   }
-  constructor(private route: Router) {}
-  addtocart(excercise: any) {
-    this.route.navigate([`/cart`]);
+  constructor(private cartservice: CartService) {}
+  cart() {
+    this.cartservice.addingCart(this.excercise);
   }
 }

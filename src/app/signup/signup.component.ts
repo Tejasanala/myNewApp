@@ -30,19 +30,19 @@ import { LoginService } from '../login.service';
 })
 export class SignupComponent {
   signupForm!: FormGroup;
-  users: { userName: string; password: string }[] = []; // Array to store users
+  users: { username: string; password: string }[] = []; // Array to store users
   constructor(
     private fb: FormBuilder,
     private route: Router,
     private loginService: LoginService
   ) {
     this.signupForm = this.fb.group({
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
-  get userName() {
-    return this.signupForm.get('userName');
+  get username() {
+    return this.signupForm.get('username');
   }
   get password() {
     return this.signupForm.get('password');
