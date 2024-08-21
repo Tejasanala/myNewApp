@@ -50,11 +50,13 @@ export class LoginComponent {
 
   login() {
     console.log(this.loginForm.value);
-    this.loginService.login(this.loginForm.value).then((data) => {
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('roleId', data.roleId);
-      localStorage.setItem('username', data.username);
-    });
-    // this.route.navigate([`/home`]);
+    this.loginService
+      .login(this.loginForm.value)
+      .then((data) => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('roleId', data.roleId);
+        localStorage.setItem('username', data.username);
+      })
+      .then(() => this.route.navigate([`/home`]));
   }
 }

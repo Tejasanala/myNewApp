@@ -30,7 +30,7 @@ export class CartService {
   addingCart(product: any) {
     // this.movies.push(newMovie);
     // this.CartData.push(product);
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingProductIndex = cart.findIndex(
       (item: { id: any }) => item.id === product.id
     );
@@ -41,7 +41,8 @@ export class CartService {
     } else {
       // Add new product to cart
       product.quantity = 1; // Initialize quantity
-      cart.push(product);
+      console.log(product);
+      this.CartData.push(product);
     }
   }
 

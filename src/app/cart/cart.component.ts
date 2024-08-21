@@ -2,17 +2,18 @@ import { Component } from '@angular/core';
 import { ExcercisesComponent } from '../excercises/excercises.component';
 import { CartService } from '../cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ExcercisesComponent],
+  imports: [ExcercisesComponent, MatCardModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
 export class CartComponent {
   excercise: any = {};
-  ProductsList: any = [];
+  CartData: any = {};
 
   constructor(
     private cartservice: CartService,
@@ -21,15 +22,13 @@ export class CartComponent {
   ) {}
 
   ngOnInit() {
-    this.ProductsList = this.cartservice.gettingCart();
+    this.CartData = this.cartservice.gettingCart();
 
-    this.excercise.patchValue(this.ProductsList[0]);
-    // this.Products = this.productsService.gettingCart();
+    console.log(this.CartData);
+    //this.excercise.patchValue(this.ProductsList[0]);
+    //this.excercise = this.cartservice.gettingCart();
   }
   deleteProduct() {
     console.log('deleting..');
-  }
-  orders() {
-    this.router.navigate([`orders`]);
   }
 }

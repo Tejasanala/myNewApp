@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CounterComponent } from '../counter/counter.component';
 import { IExcercise } from '../app.component';
 import { CartService } from '../cart.service';
+import { SnackBarComponent } from '../snackbar/snackbar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-excercise',
@@ -50,8 +52,17 @@ export class ExcerciseComponent {
   editMovie() {
     this.editMovieEvent.emit(this.excercise);
   }
-  constructor(private cartservice: CartService) {}
+  constructor(
+    private cartservice: CartService,
+    private snackBar: MatSnackBar
+  ) {}
   cart() {
     this.cartservice.addingCart(this.excercise);
+    this.snackBar.openFromComponent(SnackBarComponent, {
+      duration: 3000, // Duration in milliseconds
+      verticalPosition: 'bottom', // Position on the screen
+      horizontalPosition: 'center', // Position on the screen
+      panelClass: ['snack-bar-success'],
+    });
   }
 }

@@ -1,23 +1,28 @@
-<img
-  src="{{ excercise.image }}"
-  alt="{{ excercise.name }}"
-  class="movie-poster"
-/>
+@for(excercise of CartData ; track $index ){
 
-<div class="movie-spec">
+<div class="style">
   <h4 class="movie-title">
     {{ excercise.name }}
   </h4>
-  <p class="movie-rating">{{ excercise.rating }}</p>
-</div>
-<div class="type">
-  <p>{{ excercise.type }}</p>
-  <p>
-    {{ excercise.preferredTime }}
-  </p>
-</div>
-<p>
-  {{ excercise.bodyPartAffected }}
-</p>
+  <img
+    src="{{ excercise.image }}"
+    alt="{{ excercise.name }}"
+    class="movie-poster"
+  />
 
-<p><i class="fa-solid fa-star"></i> {{ excercise.moreInfo }}</p>
+  <div class="movie-spec">
+    <p class="movie-rating">{{ excercise.rating }}</p>
+  </div>
+  <div class="type">
+    <p>{{ excercise.type }}</p>
+    <p>
+      {{ excercise.preferredTime }}
+    </p>
+  </div>
+  <p>
+    {{ excercise.bodyPartAffected }}
+  </p>
+
+  <p><i class="fa-solid fa-star"></i> {{ excercise.moreInfo }}</p>
+</div>
+}
