@@ -8,17 +8,15 @@
   <h4 class="movie-title">
     {{ excercise.name }}
   </h4>
-  <p class="movie-rating">⭐ {{ excercise.rating }}</p>
+  <p class="movie-rating">{{ excercise.rating }}</p>
 </div>
 <div class="type">
-  <p><i class="fa-solid fa-list"></i> {{ excercise.type }}</p>
+  <p>{{ excercise.type }}</p>
   <p>
-    <i class="fa-regular fa-clock" style="font-size: 20px"></i>
     {{ excercise.preferredTime }}
   </p>
 </div>
 <p>
-  <i class="fa-solid fa-person-walking"></i>
   {{ excercise.bodyPartAffected }}
 </p>
 
