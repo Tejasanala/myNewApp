@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { ConfirmDailogComponent } from '../confirm-dailog/confirm-dailog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-editexcercise',
@@ -32,7 +34,8 @@ export class EditexcerciseComponent {
     public excercisesService: ExcercisesService,
     private router: Router,
     private fb: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) {
     // formGroup -> formControlName
     this.excerciseForm = this.fb.group({
@@ -59,6 +62,15 @@ export class EditexcerciseComponent {
     });
   }
 
+  openConfirmDialog(message: string): Promise<boolean> {
+    const dialogRef = this.dialog.open(ConfirmDailogComponent, {
+      width: '250px',
+      data: { message },
+    });
+
+    return dialogRef.afterClosed().toPromise();
+  }
+
   get name() {
     return this.excerciseForm.get('name');
   }
@@ -79,17 +91,24 @@ export class EditexcerciseComponent {
     });
   }
 
-  editexcercise() {
+  async editexcercise() {
     // Todo: Fix Add - Technical Debt
 
     if (this.excerciseForm.valid) {
       let updatedMovie: IExcercise = this.excerciseForm.value;
       console.log(this.excerciseForm.value);
 
-      this.excercisesService.editMovie(updatedMovie).then(() => {
-        // Move to movies page
-        this.router.navigate(['excercises']);
-      });
+      const confirmed = await this.openConfirmDialog(
+        'Are you sure you want to logout?'
+      );
+      if (confirmed) {
+        console.log('Editing the value...');
+        this.excercisesService.editMovie(updatedMovie).then(() => {
+          this.router.navigate(['excercises']);
+        });
+      } else {
+        this.router.navigate(['/excercises']);
+      }
     }
   }
 }

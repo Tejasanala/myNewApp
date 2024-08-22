@@ -102,7 +102,7 @@ export class ExcercisesComponent {
       'Are you sure you want to logout?'
     );
     if (confirmed) {
-      console.log('logging out...');
+      console.log('Deleting  out...');
       // localStorage.setItem("token",'');
       // localStorage.setItem("roleId",'');
       // this.loginService.loginSuccess = false;

@@ -50,6 +50,8 @@ export class SignupComponent {
 
   signup() {
     console.log(this.signupForm.value);
-    this.loginService.createUser(this.signupForm.value);
+    this.loginService
+      .createUser(this.signupForm.value)
+      .then(() => this.route.navigate([`/login`]));
   }
 }
