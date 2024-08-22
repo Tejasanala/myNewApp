@@ -14,9 +14,12 @@
 
       <div class="type">
         <p>Type: {{ excercise.type }}</p>
-        <p>preferredTime :{{ excercise.preferredTime }}</p>
+        <p>
+          <i class="fa-regular fa-clock" style="font-size: 20px"></i
+          >{{ excercise.preferredTime }}
+        </p>
       </div>
-      <p>Parts Effected :{{ excercise.bodyPartAffected }}</p>
+      <p>{{ excercise.bodyPartAffected }}</p>
 
       <p><i class="fa-solid fa-star"></i> {{ excercise.moreInfo }}</p>
     </div>

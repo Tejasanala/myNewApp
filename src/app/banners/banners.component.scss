@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top:50px
+  }
+  
+  img {
+    width: 90vw;
+    height: 75vh;
+  }
+  
+  .button1, .button2 {
+    cursor: pointer;
+    color: white;
+    width: 10%;
+    height: 80%;
+    font-size: 2rem;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 10%;
+  }
+  
+  .button1 {
+    left: 3%;
+  }
+  
+  .button2 {
+    right: 3%;
+  }
+  

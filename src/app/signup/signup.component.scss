@@ -1,16 +1,87 @@
-.easy
-{
+
+.parent {
+    margin: 0;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Light background color for contrast */
+  }
   
-    max-width: 200px;
-    margin: 16px auto;
-}
-.title
-{
-    font-size:40px;
-    font-weight: 50px;
-    margin-bottom: 30px;
-    
-}
+  /* Container for the login form */
+  .easy {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Styles for form fields */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field mat-label {
+    font-size: 14px;
+    color: white; /* Set label color to white */
+    padding: 0 4px; /* Optional: padding to ensure readability against background */
+    border-radius: 4px; /* Optional: rounded corners to match form field */
+    font-size: 17px;
+  }
+  
+  mat-form-field input {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  mat-error {
+    font-size: 12px;
+    color: #d32f2f;
+  }
+  
+  /* Styles for the submit button */
+  button[mat-raised-button] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  button[mat-raised-button]:hover {
+    background-color: rgb(46, 45, 45);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles for the signup link */
+  a {
+    display: block;
+    text-align: center;
+    color: #1976d2;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
