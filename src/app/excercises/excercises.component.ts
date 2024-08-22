@@ -15,6 +15,9 @@ import { CommonModule } from '@angular/common';
 import { debounceTime, switchMap, catchError, of, startWith } from 'rxjs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CartService } from '../cart.service';
+import { LoginService } from '../login.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDailogComponent } from '../confirm-dailog/confirm-dailog.component';
 
 @Component({
   selector: 'app-excercises',
@@ -45,9 +48,20 @@ export class ExcercisesComponent {
     public excercisesService: ExcercisesService,
     public cartservice: CartService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public loginService: LoginService,
+    private dialog: MatDialog
   ) {
     this.searchForm = this.fb.group({ search: '' });
+  }
+
+  openConfirmDialog(message: string): Promise<boolean> {
+    const dialogRef = this.dialog.open(ConfirmDailogComponent, {
+      width: '250px',
+      data: { message },
+    });
+
+    return dialogRef.afterClosed().toPromise();
   }
 
   ngOnInit() {
@@ -83,8 +97,22 @@ export class ExcercisesComponent {
       });
   }
 
-  deleteMovieP(exe: IExcercise) {
-    this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
+  async deleteMovieP(exe: IExcercise) {
+    const confirmed = await this.openConfirmDialog(
+      'Are you sure you want to logout?'
+    );
+    if (confirmed) {
+      console.log('logging out...');
+      // localStorage.setItem("token",'');
+      // localStorage.setItem("roleId",'');
+      // this.loginService.loginSuccess = false;
+
+      this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
+      // localStorage.clear();
+      // this.router.navigate([`/`]);
+    } else {
+      this.router.navigate(['/excercises']);
+    }
   }
 
   editMovieP(exe: IExcercise) {

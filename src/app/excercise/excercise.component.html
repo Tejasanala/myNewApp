@@ -5,18 +5,23 @@
     class="movie-poster"
   />
   <mat-card-content>
-    <div class="movie-spec">
-      <h4 class="movie-title">
-        {{ excercise.name }}
-        <button
-          mat-icon-button
-          aria-label="Details of Workout"
-          routerLink="/excercises/{{ id }}"
-        >
-          <mat-icon>info</mat-icon>
-        </button>
-      </h4>
-      <p class="movie-rating">⭐ {{ excercise.rating }}</p>
+    <div class="full">
+      <div class="movie-spec">
+        <h4 class="movie-title">
+          {{ excercise.name }}
+          <button
+            mat-icon-button
+            aria-label="Details of Workout"
+            routerLink="/excercises/{{ id }}"
+          >
+            <mat-icon>info</mat-icon>
+          </button>
+        </h4>
+      </div>
+      <div class="flex">
+        <button class="cart-button" (click)="cart()">❤</button>
+        <p class="movie-rating">⭐ {{ excercise.rating }}</p>
+      </div>
     </div>
     <div class="type">
       <p><i class="fa-solid fa-list"></i> {{ excercise.type }}</p>
@@ -35,12 +40,11 @@
       <app-counter />
 
       <div>
-        <button class="cart-button" (click)="cart()">Try it</button>
-
         <button
           mat-icon-button
           aria-label="Delete movie"
           color="warn"
+          class="size"
           (click)="deleteMovie()"
         >
           <mat-icon>delete</mat-icon>
@@ -49,6 +53,7 @@
           mat-icon-button
           aria-label="Delete movie"
           color="primary"
+          class="size"
           (click)="editMovie()"
         >
           <mat-icon>edit</mat-icon>

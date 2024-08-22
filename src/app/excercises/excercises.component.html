@@ -1,25 +1,27 @@
-<form [formGroup]="searchForm">
-  <div class="mainclass">
-    <div class="recipe-search-container">
-      <h2><i>Search</i></h2>
-      <mat-form-field>
-        <input matInput placeholder="search..." formControlName="search" />
-      </mat-form-field>
+<div class="sum">
+  <form [formGroup]="searchForm">
+    <div class="mainclass">
+      <div class="recipe-search-container">
+        <h2><i>Search</i></h2>
+        <mat-form-field>
+          <input matInput placeholder="search..." formControlName="search" />
+        </mat-form-field>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 
-<section class="movie-list-container">
-  @if(isLoading){
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  <section class="movie-list-container">
+    @if(isLoading){
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 
-  } @for (exe of filteredexcercises; track exe.ValueId){
-  <app-excercise
-    [excercise]="exe"
-    (deleteMovieEvent)="deleteMovieP($event)"
-    (editMovieEvent)="editMovieP($event)"
-    (cartEvent)="cart($event)"
-    [id]="exe.ValueId"
-  />
-  }
-</section>
+    } @for (exe of filteredexcercises; track exe.ValueId){
+    <app-excercise
+      [excercise]="exe"
+      (deleteMovieEvent)="deleteMovieP($event)"
+      (editMovieEvent)="editMovieP($event)"
+      (cartEvent)="cart($event)"
+      [id]="exe.ValueId"
+    />
+    }
+  </section>
+</div>

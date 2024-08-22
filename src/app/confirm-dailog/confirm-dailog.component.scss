@@ -1,0 +1,34 @@
+// src/styles.scss or src/app/your-component/your-component.component.scss
+
+.dialog-container {
+    max-width: 500px;  // Adjust the width as needed
+    padding: 20px;
+    background-color: #fff; // Background color of the dialog
+    border-radius: 8px; // Rounded corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Shadow for a lifted effect
+  }
+  
+  .dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333; // Color of the title
+  }
+  
+  .dialog-content {
+    font-size: 16px;
+    color: #666; // Color of the content text
+    margin-bottom: 24px; // Space between content and actions
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end; // Align buttons to the right
+    gap: 10px; // Space between buttons
+  }
+  
+  .dialog-actions button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  

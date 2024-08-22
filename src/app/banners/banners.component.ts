@@ -9,14 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannersComponent implements OnInit {
   banners: string[] = [
-    'https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg',
+    'https://media.istockphoto.com/id/1149241542/photo/young-man-exercising-using-battle-rope.jpg?s=170667a&w=0&k=20&c=AlNddkebz3UzqF8sv6gvzfMf0iJ4rP5mlIHzrXA1wvQ=',
     'https://img.freepik.com/premium-photo/close-up-shot-male-cyclist-legs-man-cycling-outdoors-summer-day_386167-5838.jpg?w=740',
-    'assets/images/Pulse Forge — Go-to app for easy workouts and better fitness.jpg',
-    'https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-lakescape-landscape-nature-scenery-hd-image_2950137.jpg',
-    'https://wallpapers.com/images/hd/nature-landscape-pictures-ifqj8gxs5r49lqv7.jpg',
-    'https://wallpapers.com/images/hd/nature-landscape-pictures-69siuyypm1xg7ogz.jpg',
-    'https://www.landscapephotographyiq.com/wp-content/uploads/2017/07/soft-light-early.jpg',
-    'https://i.pinimg.com/originals/46/cd/e1/46cde1793ed0e7727ffbf6dc7a7ea189.jpg',
+    // 'https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-lakescape-landscape-nature-scenery-hd-image_2950137.jpg',
+    // 'https://wallpapers.com/images/hd/nature-landscape-pictures-ifqj8gxs5r49lqv7.jpg',
+    // 'https://wallpapers.com/images/hd/nature-landscape-pictures-69siuyypm1xg7ogz.jpg',
+    // 'https://www.landscapephotographyiq.com/wp-content/uploads/2017/07/soft-light-early.jpg',
+    // 'https://i.pinimg.com/originals/46/cd/e1/46cde1793ed0e7727ffbf6dc7a7ea189.jpg',
   ];
   currentBanner: string = this.banners[0];
   position: number = 0;

@@ -4,11 +4,12 @@
     aria-label="Thumbs to like the movie"
     [matBadge]="like"
     color="primary"
+    class="size"
     (click)="incrementLike()"
   >
-    <mat-icon>thumb_up</mat-icon>
+    ❤
   </button>
-  <button
+  <!-- <button
     mat-icon-button
     aria-label="Click to dislike the movie"
     [matBadge]="disLike"
@@ -16,5 +17,5 @@
     (click)="incrementDisLike()"
   >
     <mat-icon>thumb_down</mat-icon>
-  </button>
+  </button> -->
 </div>

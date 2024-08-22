@@ -1,56 +1,170 @@
-.movie-spec {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+// .movie-spec {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
   
-  .movie-container {
-    overflow: hidden;
-    width: 390px;
-    color:white;
-    margin-top : 30px;
-    margin-left: 40px;
-  }
+//   .movie-container {
+//     overflow: hidden;
+//     width: 390px;
+//     color:white;
+//     margin-top : 30px;
+//     margin-left: 40px;
+//   }
   
-  .movie-poster {
-    height: 450px;
-    width: 100%;
-    object-fit: cover;
+//   .movie-poster {
+//     height: 450px;
+//     width: 100%;
+//     object-fit: cover;
   
-    // border-radius: 10px;
-  }
+//     // border-radius: 10px;
+//   }
   
-  .movie-rating {
-    font-size: 18px;
-  }
+//   .movie-rating {
+//     font-size: 18px;
+//   }
   
-  .movie-rating,
-  .movie-title {
-    margin: 6px 0px;
-  }
+//   .movie-rating,
+//   .movie-title {
+//     margin: 6px 0px;
+//   }
   
-  .action-buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
+//   .action-buttons-container {
+//     display: flex;
+//     justify-content: space-between;
+//   }
   
-  .type
-  {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+//   .type
+//   {
+//     display:flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//   }
 
-  .cart-button {
-    background-color: #c45d59;
-    border: none;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+//   .cart-button {
+//     background-color: #c45d59;
+//     border: none;
+//     color: white;
+//     padding: 10px;
+//     width: 100%;
+//     font-size: 1rem;
+//     cursor: pointer;
+//   }
   
-  .cart-button:hover {
-    background-color: black;
-  }
+//   .cart-button:hover {
+//     background-color: black;
+//   }
+
+.movie-container {
+  background-color: #333; /* Dark background for the card */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #f0f0f0; /* Light text color */
+  overflow: hidden;
+  margin: 20px;
+  width:500px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #444; /* Subtle border below the image */
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+.movie-spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #e0e0e0; /* Light color for title */
+  margin: 0;
+}
+
+.movie-title button {
+  color: #e0e0e0; /* Icon color for button */
+}
+
+.movie-rating {
+  font-size: 1rem;
+  color: #ffeb3b; /* Yellow color for rating stars */
+}
+
+.type {
+  display: flex;
+  flex-wrap : wrap;
+  justify-content: space-between;
+  margin-bottom: 16px
+}
+
+.type p {
+  align-items: center;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #b0b0b0; /* Light gray for text */
+  font-size: 20px;
+}
+
+.type i {
+  margin-right: 8px;
+}
+
+.action-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.cart-button {
+/* Primary button color */
+
+  font-size: 1.4rem;
+  padding: 10px  14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+  background-color: #c03030; 
+  color:white
+}
+
+mat-icon-button {
+  color: #e0e0e0; /* Icon color */
+}
+
+mat-icon-button:hover {
+  background-color: #444; /* Dark background on hover */
+  border-radius: 4px;
+}
+
+mat-icon {
+  font-size: 25px;
+}
+
+
+.flex
+{
+  display : flex;
+  gap:30px
+
+}
+.full
+{
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
