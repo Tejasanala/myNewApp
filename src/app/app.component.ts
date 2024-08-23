@@ -4,6 +4,8 @@ import { CounterComponent } from './counter/counter.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { AddexcerciseComponent } from './addexcercise/addexcercise.component';
 import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
 
 export interface IExcercise {
   ValueId: string;
@@ -33,4 +35,6 @@ export interface IExcercise {
 })
 export class AppComponent {
   title = 'myNewApp';
+
+  constructor(public loginService: LoginService) {}
 }

@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginService } from '../login.service';
-import { Route, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  loginok: any;
   loginForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -49,6 +50,8 @@ export class LoginComponent {
   }
 
   login() {
+    this.loginService.loginok = !this.loginService.loginok;
+
     console.log(this.loginForm.value);
     this.loginService
       .login(this.loginForm.value)
@@ -57,6 +60,6 @@ export class LoginComponent {
         localStorage.setItem('roleId', data.roleId);
         localStorage.setItem('username', data.username);
       })
-      .then(() => this.route.navigate([`/home`]));
+      .then(() => this.route.navigate([`/excercises`]));
   }
 }

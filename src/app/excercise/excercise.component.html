@@ -1,10 +1,14 @@
-<mat-card class="movie-container">
-  <img
-    src="{{ excercise.image }}"
-    alt="{{ excercise.name }}"
-    class="movie-poster"
-  />
-  <mat-card-content>
+<div class="horizontal">
+  <!-- <mat-card class="fitness-card"> -->
+  <div class="movie-container">
+    <img
+      src="{{ excercise.image }}"
+      alt="{{ excercise.name }}"
+      class="movie-poster"
+    />
+  </div>
+  <!-- <mat-card-content> -->
+  <div class="total">
     <div class="full">
       <div class="movie-spec">
         <h4 class="movie-title">
@@ -30,16 +34,11 @@
         {{ excercise.preferredTime }}
       </p>
     </div>
-    <!-- <p>
-      <i class="fa-solid fa-person-walking"></i>
-      {{ excercise.bodyPartAffected }}
-    </p>
-
-    <p><i class="fa-solid fa-star"></i> {{ excercise.moreInfo }}</p> -->
     <div class="action-buttons-container">
       <app-counter />
 
-      <div>
+      @if(value == "0") {
+      <div class="action-buttons">
         <button
           mat-icon-button
           aria-label="Delete movie"
@@ -51,7 +50,7 @@
         </button>
         <button
           mat-icon-button
-          aria-label="Delete movie"
+          aria-label="Edit movie"
           color="primary"
           class="size"
           (click)="editMovie()"
@@ -59,6 +58,9 @@
           <mat-icon>edit</mat-icon>
         </button>
       </div>
+      }
     </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+  <!-- </mat-card-content>
+  </mat-card> -->
+</div>

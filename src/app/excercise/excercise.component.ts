@@ -9,6 +9,7 @@ import { IExcercise } from '../app.component';
 import { CartService } from '../cart.service';
 import { SnackBarComponent } from '../snackbar/snackbar.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-excercise',
@@ -41,7 +42,6 @@ export class ExcerciseComponent {
   };
 
   @Input() id!: string;
-
   @Output() deleteMovieEvent = new EventEmitter<IExcercise>();
   @Output() editMovieEvent = new EventEmitter<IExcercise>();
   @Output() cartEvent = new EventEmitter<any>();
@@ -65,4 +65,6 @@ export class ExcerciseComponent {
       panelClass: ['snack-bar-success'],
     });
   }
+
+  value = localStorage.getItem('roleId');
 }

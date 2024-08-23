@@ -11,11 +11,12 @@ import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { authGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: HomeComponent,
   },
   {
     path: 'login',
@@ -41,6 +42,11 @@ export const routes: Routes = [
       { path: ':id', component: ExcerciseDetailsComponent },
     ],
     canActivate: [authGuard],
+  },
+
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
   {
     path: '**',
