@@ -31,8 +31,7 @@ export class LogoutComponent {
     );
     if (confirmed) {
       console.log('logging out...');
-      // localStorage.setItem("token",'');
-      // localStorage.setItem("roleId",'');
+
       this.loginService.loginok = !this.loginService.loginok;
 
       localStorage.clear();

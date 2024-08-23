@@ -66,9 +66,9 @@ export class ExcercisesComponent {
 
   ngOnInit() {
     //this.loadMovies();
-    localStorage.setItem('token', ' ');
-    localStorage.setItem('username', ' ');
-    localStorage.setItem('roleId', ' ');
+    // localStorage.setItem('token', ' ');
+    // localStorage.setItem('username', ' ');
+    // localStorage.setItem('roleId', ' ');
     this.searchForm
       .get('search')
       ?.valueChanges.pipe(

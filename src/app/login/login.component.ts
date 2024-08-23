@@ -31,6 +31,7 @@ import { MatCardModule } from '@angular/material/card';
 export class LoginComponent {
   loginok: any;
   loginForm!: FormGroup;
+  errorMessage: any;
   constructor(
     private fb: FormBuilder,
     private loginService: LoginService,
@@ -56,9 +57,14 @@ export class LoginComponent {
     this.loginService
       .login(this.loginForm.value)
       .then((data) => {
+        console.log(data);
         localStorage.setItem('token', data.token);
         localStorage.setItem('roleId', data.roleId);
         localStorage.setItem('username', data.username);
+      })
+      .catch((error: string) => {
+        console.error('Error during login:', error);
+        this.errorMessage = error; // Set error message for display
       })
       .then(() => this.route.navigate([`/excercises`]));
   }

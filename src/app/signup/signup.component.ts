@@ -31,6 +31,7 @@ import { LoginService } from '../login.service';
 export class SignupComponent {
   signupForm!: FormGroup;
   users: { username: string; password: string }[] = []; // Array to store users
+  errorMessage: string | null = null;
   constructor(
     private fb: FormBuilder,
     private route: Router,
@@ -52,6 +53,15 @@ export class SignupComponent {
     console.log(this.signupForm.value);
     this.loginService
       .createUser(this.signupForm.value)
-      .then(() => this.route.navigate([`/login`]));
+      .then((data) => {
+        if (data.msg == 'user already exist') {
+          this.errorMessage = 'user already exist';
+        }
+      })
+      .then(() => this.route.navigate([`/login`]))
+      .catch((error) => {
+        console.error('Error fetching message:', error);
+        this.errorMessage = error.message || 'An error occurred';
+      });
   }
 }

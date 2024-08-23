@@ -1,27 +1,77 @@
-.movie-container
-{
-    display:flex;
-    flex-direction: row-reverse;
-    color:whitesmoke;
-    justify-content: center;
-}
-.movie-poster
-{
-    width:750px;
-    align-items: center;
-}
-.body
-{
-    width:600px;
-    font-size: 25px;
-    line-height: 36px;
-    padding-top: 25px;
+.parent {
+    display: grid;
+    place-items: center;
+    padding:28px;
+background-image: url("https://t4.ftcdn.net/jpg/02/57/65/13/360_F_257651358_mgb0VrHgGqNSKNjiJSltEsaHhY35RtT4.jpg");
+  
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-direction: row;
+    color: #030303;
+    background-color: #292626;
+    border-radius: 10px;
+    box-shadow: 0 25px 20px rgba(22, 22, 22, 0.1);
+    overflow: hidden;
+  }
+  
+//   .movie-container:hover
+//   {
+      
+//   }
 
-}
-.parent
-{
-    display:grid;
-    margin-top:50px;
-    justify-items: center;
-    border-radius: 15px;
-}
+  .movie-poster {
+
+    height: auto;
+    object-fit: cover;
+    border-right: 2px solid #ddd;
+    width:700px
+  }
+  
+  .mat-card-content {
+    padding: 20px;
+  }
+  
+  .body {
+    width: 500px;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #ffffff;
+
+  }
+  
+  .movie-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f3ebeb;
+  }
+  
+  .movie-rating {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+  }
+  
+  .type {
+    margin-bottom: 20px;
+  }
+  
+  .type i {
+    color: #007bff;
+    margin-right: 5px;
+  }
+  
+  .caution {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .caution i {
+    margin-right: 10px;
+  }
+  

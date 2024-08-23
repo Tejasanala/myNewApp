@@ -6,8 +6,24 @@
     <a routerLink="/login">Login</a>
     }
     <a routerLink="/excercises">Exercise</a>
+    @if(value=="0") {
     <a routerLink="/excercises/add">Add Exercise</a>
-    <a routerLink="/excercises/cart">Wishlist</a>
+    }
+    <div class="dropdown">
+      <button class="dropbtn">
+        Category List
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a (click)="refreshComponent('Full Body')">Full Body</a>
+        <a (click)="refreshComponent('Legs')">Legs</a>
+        <a (click)="refreshComponent('Chest')">Chest</a>
+        <a (click)="refreshComponent('Shoulders')">Shoulders</a>
+        <a (click)="refreshComponent('Triceps')">Triceps</a>
+        <a (click)="refreshComponent('Core')">Core</a>
+      </div>
+    </div>
+    <a routerLink="/excercises/cart">❤</a>
     @if(loginService.loginok) {
     <a routerLink="/logout">Logout</a>
     }

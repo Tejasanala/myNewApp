@@ -9,23 +9,13 @@
   </div>
   <!-- <mat-card-content> -->
   <div class="total">
+    <h2 class="movie-title">
+      {{ excercise.name }}
+    </h2>
     <div class="full">
-      <div class="movie-spec">
-        <h4 class="movie-title">
-          {{ excercise.name }}
-          <button
-            mat-icon-button
-            aria-label="Details of Workout"
-            routerLink="/excercises/{{ id }}"
-          >
-            <mat-icon>info</mat-icon>
-          </button>
-        </h4>
-      </div>
-      <div class="flex">
-        <button class="cart-button" (click)="cart()">❤</button>
-        <p class="movie-rating">⭐ {{ excercise.rating }}</p>
-      </div>
+      <button routerLink="/excercises/{{ id }}" class="styled-button">
+        View Details
+      </button>
     </div>
     <div class="type">
       <p><i class="fa-solid fa-list"></i> {{ excercise.type }}</p>
@@ -34,9 +24,13 @@
         {{ excercise.preferredTime }}
       </p>
     </div>
-    <div class="action-buttons-container">
-      <app-counter />
 
+    <div class="suggest">
+      <app-counter />
+      <button class="cart-button" (click)="cart()">❤</button>
+    </div>
+
+    <div class="action-buttons-container">
       @if(value == "0") {
       <div class="action-buttons">
         <button

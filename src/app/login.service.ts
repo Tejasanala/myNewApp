@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { API } from '../../global';
+import { HttpErrorResponse } from '@angular/common/http';
 export interface User {
   username: string;
   password: string;
@@ -26,7 +27,12 @@ export class LoginService {
       headers: {
         'Content-type': 'application/json',
       },
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      .catch((error) => {
+        console.log(error.msg);
+        return Promise.reject(error);
+      });
   }
 
   login(credentials: User): Promise<TokenResponse> {

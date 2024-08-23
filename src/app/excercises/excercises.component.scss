@@ -6,20 +6,23 @@
 
 }
 
-.sum
+.whole
 {
-  background-color: #f4f4f4;
+  background-image: url("https://t3.ftcdn.net/jpg/01/88/84/52/360_F_188845262_xGz2ygG9mxvtjsVK1otZGgZE7TfDPnWC.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 .mainclass {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 30vh;
-  background-color: #f4f4f4; /* Light background color */
 }
 
 .recipe-search-container {
-  background: #ffffff; /* White background for the search container */
+  background-color: #f4f4f4;
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
   padding: 20px;
