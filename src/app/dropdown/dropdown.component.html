@@ -1,0 +1,5 @@
+<div class="all-courses-container">
+  @for(exe of filteredexcercises; track exe.ValueId) {
+  <app-excercise [excercise]="exe" [id]="exe.ValueId" />
+  }
+</div>

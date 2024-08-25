@@ -1,5 +1,5 @@
 <div class="whole">
-  <form [formGroup]="searchForm">
+  <!-- <form [formGroup]="searchForm">
     <div class="mainclass">
       <div class="recipe-search-container">
         <h2><i>Search</i></h2>
@@ -7,8 +7,20 @@
           <input matInput placeholder="search..." formControlName="search" />
         </mat-form-field>
       </div>
-    </div>
-  </form>
+    </div> -->
+  <div class="form">
+    <form [formGroup]="searchForm" class="search-bar">
+      <br />
+      <br />
+      <input
+        type="search"
+        placeholder="search Workouts"
+        formControlName="search"
+        class="search-input"
+      />
+      <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+    </form>
+  </div>
 
   <section class="movie-list-container">
     @if(isLoading){

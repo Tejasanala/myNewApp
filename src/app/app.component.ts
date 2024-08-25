@@ -59,7 +59,7 @@ export class AppComponent {
   refreshComponent(category: string) {
     const currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/categories', category]);
+      this.router.navigate(['/dropdown', category]);
     });
   }
 }

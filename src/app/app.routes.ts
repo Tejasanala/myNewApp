@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { authGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'dropdown/:bodyPartAffected',
+    component: DropdownComponent,
   },
   {
     path: 'excercises',

@@ -14,10 +14,10 @@
 }
 
 .movie-poster {
-  width: 200px;
-  // height: 200px;
+  width: 300px;
   object-fit: cover;
   border-radius: 12px 0 0 12px;
+  margin-top:60px
 }
 
 
@@ -47,8 +47,8 @@
 }
 
 .styled-button:hover {
-  background-color: #3b4044; /* Darker color on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #3b4044; 
+  transform: scale(1.05); 
 }
 
 .styled-button:active {
@@ -57,9 +57,9 @@
 }
 
 .styled-button:disabled {
-  background-color: #c0c0c0; /* Disabled button color */
-  color: #6c757d; /* Disabled text color */
-  cursor: not-allowed; /* Cursor indicating the button is disabled */
+  background-color: #c0c0c0; 
+  color: #6c757d; 
+  cursor: not-allowed;
 }
 
 
@@ -115,13 +115,9 @@
   gap:25px;
 }
 
-// .type i {
-//   margin-right: 8px;
-//   color: #333;
-// }
-
 .action-buttons-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }

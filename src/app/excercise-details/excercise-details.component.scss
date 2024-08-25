@@ -2,7 +2,10 @@
     display: grid;
     place-items: center;
     padding:28px;
-background-image: url("https://t4.ftcdn.net/jpg/02/57/65/13/360_F_257651358_mgb0VrHgGqNSKNjiJSltEsaHhY35RtT4.jpg");
+background-color:#141414;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
   
   }
   
@@ -10,7 +13,7 @@ background-image: url("https://t4.ftcdn.net/jpg/02/57/65/13/360_F_257651358_mgb0
     display: flex;
     flex-direction: row;
     color: #030303;
-    background-color: #292626;
+    background-color: #141414;
     border-radius: 10px;
     box-shadow: 0 25px 20px rgba(22, 22, 22, 0.1);
     overflow: hidden;
@@ -35,9 +38,10 @@ background-image: url("https://t4.ftcdn.net/jpg/02/57/65/13/360_F_257651358_mgb0
   
   .body {
     width: 500px;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.6;
     color: #ffffff;
+    font-family: Merriweather, sans-serif;
 
   }
   
@@ -47,13 +51,7 @@ background-image: url("https://t4.ftcdn.net/jpg/02/57/65/13/360_F_257651358_mgb0
     margin-bottom: 10px;
     color: #f3ebeb;
   }
-  
-  .movie-rating {
-    font-size: 18px;
-    color: #ffcc00;
-    margin-bottom: 20px;
-  }
-  
+    
   .type {
     margin-bottom: 20px;
   }
