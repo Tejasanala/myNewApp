@@ -19,6 +19,20 @@ export interface IExcercise {
   description: string;
   cautionAge: string;
 }
+
+export interface challenges {
+  challengeId: string;
+  heading: string;
+  name: string;
+  description: string;
+  duration_days: number;
+  goal: string;
+  unit: string;
+  difficulty: string;
+  exercises: string[];
+  image: string;
+  cost: string;
+}
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -1,6 +1,9 @@
 <nav class="navigation">
   <div class="icon"><i class="fa-solid fa-dumbbell"></i> PulseForge</div>
-  <ul>
+  <button class="hamburger-menu" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </button>
+  <ul id="nav-menu">
     <a routerLink="/home">Home</a>
     @if(!loginService.loginok) {
     <a routerLink="/login">Login</a>
@@ -25,6 +28,7 @@
       </div>
     </div>
     <a routerLink="/excercises/cart">❤</a>
+    <a routerLink="/challenges">Challenges</a>
     @if(loginService.loginok) {
     <a routerLink="/logout">Logout</a>
     }

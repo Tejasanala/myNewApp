@@ -13,6 +13,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { authGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ChallengesComponent } from './challenges/challenges.component';
 
 export const routes: Routes = [
   {
@@ -47,7 +48,10 @@ export const routes: Routes = [
     ],
     canActivate: [authGuard],
   },
-
+  {
+    path: 'challenges',
+    component: ChallengesComponent,
+  },
   {
     path: 'logout',
     component: LogoutComponent,

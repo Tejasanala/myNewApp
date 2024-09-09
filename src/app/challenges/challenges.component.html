@@ -1,0 +1,25 @@
+<div class="parent">
+  <mat-card class="movie-container">
+    <img src="{{ c.image }}" alt="{{ c.name }}" class="movie-poster" />
+    <mat-card-content>
+      <div class="body">
+        <div class="movie-spec">
+          <h3 class="movie-title">
+            {{ c.heading }}
+          </h3>
+        </div>
+        <div class="type">
+          <p><i class="fa-solid fa-list"></i> {{ c.goal }}</p>
+          <p>
+            <i class="fa-regular fa-clock" style="font-size: 20px"></i>
+            {{ c.difficulty }}
+          </p>
+        </div>
+
+        <p>{{ c.description }}</p>
+        <p>{{ c.cost }}</p>
+        <br />
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
