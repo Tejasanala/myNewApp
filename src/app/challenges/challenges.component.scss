@@ -1,0 +1,183 @@
+/* Search Bar Container */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* White background */
+    border-radius: 25px; /* Slightly rounded corners */
+    border: 1px solid #e0e0e0; /* Light grey border */
+    padding: 8px 20px; /* More padding for a larger feel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow */
+    max-width: 400px; /* Larger max-width */
+    margin: 0 auto; 
+    margin-bottom: 30px; /* Increased bottom margin */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Search Input */
+.search-input {
+    border: none;
+    outline: none;
+    padding: 12px 15px; /* Adjust padding for better spacing */
+    font-size: 16px;
+    border-radius: 20px; /* More rounded corners */
+    width: 100%;
+    background-color: transparent;
+    color: #333; 
+}
+
+/* Search Icon */
+.search-icon {
+    color: #007bff; /* Blue color for the icon */
+    font-size: 20px;
+    margin-left: 12px; /* Adjusted margin */
+    cursor: pointer;
+}
+
+/* Hover Effect for Search Bar */
+.search-bar:hover {
+    border-color: #007bff; /* Blue border on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Placeholder Styling */
+.search-bar .search-input::placeholder {
+    color: #999; /* Slightly darker placeholder color */
+}
+
+/* Snack Bar Container */
+.mat-snack-bar-container {
+    background-color: #212121; /* Darker background */
+    color: #ffffff; /* White text */
+    font-size: 15px; /* Slightly larger font size */
+    border-radius: 5px; /* More rounded corners */
+    padding: 15px; /* Increased padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Form Padding */
+.form {
+    padding-top: 40px; /* Increased padding */
+}
+
+/* Container styling for the parent div */
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+/* Styling for each mat-card */
+.movie-container {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the image */
+.movie-poster {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Styling for the content inside the card */
+mat-card-content {
+    padding: 15px;
+}
+
+/* Styling for the movie title */
+.movie-title {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the type section */
+.type {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.type p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Styling for the icons */
+.fa-solid, .fa-regular {
+    color: #091420;
+    margin-right: 8px;
+}
+
+/* Styling for the description and cost */
+p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Styling for the cost */
+.cost {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Optional: Add a border to the card content */
+mat-card-content {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Styling for the button */
+button {
+    background-color: #101011; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Add some padding */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0e0f0f; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add custom focus outline */
+}
+.form{
+    padding-top:30px;
+}
+.whole
+{
+  background-image: url("https://images.unsplash.com/photo-1626181181323-d0834fb2e2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.button
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

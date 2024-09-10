@@ -99,9 +99,6 @@ export class ExcercisesComponent {
     );
     if (confirmed) {
       console.log('Deleting  out...');
-      // localStorage.setItem("token",'');
-      // localStorage.setItem("roleId",'');
-      // this.loginService.loginSuccess = false;
 
       this.excercisesService.deleteMovie(exe).then(() => this.loadMovies());
       // localStorage.clear();

@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { challenges } from '../app.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ChallengesService } from '../challenges.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
@@ -15,7 +15,13 @@ import { debounceTime, startWith, switchMap } from 'rxjs';
 @Component({
   selector: 'app-challenges',
   standalone: true,
-  imports: [MatButtonModule, MatBadgeModule, MatIconModule, MatCardModule],
+  imports: [
+    MatButtonModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatCardModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './challenges.component.html',
   styleUrl: './challenges.component.scss',
 })
@@ -40,18 +46,19 @@ export class ChallengesComponent {
     cost: '₹999.00',
   };
 
-  excerciseList: any;
+  challengeList: any;
   isLoading: boolean = true;
   msg = '';
   searchingForm!: FormGroup;
 
-  searchTerm: string = '';
+  searchingTerm: string = '';
   filteredexcercises: any;
 
   constructor(
     public challengesService: ChallengesService,
     private router: Router,
     private fb: FormBuilder,
+
     public loginService: LoginService,
     private dialog: MatDialog
   ) {
@@ -79,8 +86,8 @@ export class ChallengesComponent {
       )
       .subscribe((data) => {
         console.log(data);
-        this.excerciseList = data;
-        this.filteredexcercises = this.excerciseList;
+        this.challengeList = data;
+        this.filteredexcercises = this.challengeList;
         this.isLoading = false;
       });
   }
@@ -89,7 +96,7 @@ export class ChallengesComponent {
     this.challengesService
       .getAllMoviesP()
       .then((data) => {
-        this.excerciseList = data;
+        this.challengeList = data;
         this.isLoading = false;
       })
       .catch(() => {

@@ -36,6 +36,7 @@ export const routes: Routes = [
   {
     path: 'dropdown/:bodyPartAffected',
     component: DropdownComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'excercises',
@@ -51,6 +52,7 @@ export const routes: Routes = [
   {
     path: 'challenges',
     component: ChallengesComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'logout',

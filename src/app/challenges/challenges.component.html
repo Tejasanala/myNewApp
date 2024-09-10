@@ -1,25 +1,53 @@
-<div class="parent">
-  <mat-card class="movie-container">
-    <img src="{{ c.image }}" alt="{{ c.name }}" class="movie-poster" />
-    <mat-card-content>
-      <div class="body">
-        <div class="movie-spec">
-          <h3 class="movie-title">
-            {{ c.heading }}
-          </h3>
-        </div>
-        <div class="type">
-          <p><i class="fa-solid fa-list"></i> {{ c.goal }}</p>
-          <p>
-            <i class="fa-regular fa-clock" style="font-size: 20px"></i>
-            {{ c.difficulty }}
-          </p>
-        </div>
+<div class="whole">
+  <div class="form">
+    <form [formGroup]="searchingForm" class="search-bar">
+      <br />
+      <br />
+      <input
+        type="search"
+        placeholder="search Workout Plans"
+        formControlName="search"
+        class="search-input"
+      />
+      <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+    </form>
+  </div>
+  <div class="parent">
+    @for(c of challengeList ; track $index ){
 
-        <p>{{ c.description }}</p>
-        <p>{{ c.cost }}</p>
-        <br />
-      </div>
-    </mat-card-content>
-  </mat-card>
+    <mat-card class="movie-container">
+      <img src="{{ c.image }}" alt="{{ c.name }}" class="movie-poster" />
+      <mat-card-content>
+        <div class="body">
+          <div class="movie-spec">
+            <h3 class="movie-title">
+              {{ c.heading }}
+            </h3>
+          </div>
+          <div class="type">
+            <p><i class="fa-solid fa-list"></i> {{ c.goal }}</p>
+            <p>
+              <i class="fa-regular fa-clock" style="font-size: 20px"></i>
+              {{ c.duration_days }}
+            </p>
+            <p><i class="fa-solid fa-turn-up"></i>{{ c.difficulty }}</p>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-bullseye" style="color: mediumslateblue"></i
+            >{{ c.description }}
+          </div>
+          <br />
+          <div class="button">
+            <button>{{ c.cost }}</button>
+            <button>
+              Explore
+              <i class="fa-solid fa-arrow-right" style="color: white"></i>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    }
+  </div>
 </div>

@@ -11,7 +11,7 @@ export class ChallengesService {
   constructor(private http: HttpClient) {}
 
   searchUser(searchTerm: string) {
-    return this.http.get(`${API}/Excercise?search=${searchTerm}`);
+    return this.http.get(`${API}/challenges?search=${searchTerm}`);
   }
 
   addMovie(newpackage: chalout) {
